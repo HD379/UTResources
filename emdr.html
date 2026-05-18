@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EMDR Light Bar for TV — Self-Guided Bilateral Stimulation</title>
+  <meta name="description" content="A free self-guided EMDR bilateral stimulation video for TV viewing, with curated books, talks by Bessel van der Kolk, and equipment options for home practice." />
+  <style>
+    :root {
+      --bg: #f7f1e8;
+      --paper: #fffaf2;
+      --white: #ffffff;
+      --ink: #221d18;
+      --soft-ink: #564b41;
+      --muted: #77695d;
+      --line: #dfd0bd;
+      --gold: #b9852b;
+      --green: #2d7a58;
+      --blue: #315d8f;
+      --blue-dark: #213f63;
+      --shadow: 0 18px 48px rgba(44, 31, 20, .11);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1160px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(185,133,43,.18), transparent 31rem),
+        radial-gradient(circle at 95% 2%, rgba(45,122,88,.13), transparent 28rem),
+        var(--bg);
+      line-height: 1.58;
+    }
+
+    a { color: var(--blue); text-decoration-thickness: 2px; text-underline-offset: 3px; }
+    a:hover { color: var(--blue-dark); }
+
+    .wrap { width: min(var(--max), calc(100% - 36px)); margin-inline: auto; }
+
+    header { padding: 34px 0 18px; }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      padding-bottom: 26px;
+      font-size: .95rem;
+    }
+
+    .brand { font-weight: 900; letter-spacing: -.025em; }
+    .navlinks { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: .7rem 1.05rem; }
+    .navlinks a { color: var(--muted); text-decoration: none; }
+    .navlinks a:hover { color: var(--ink); }
+
+    .back-link { color: var(--muted); text-decoration: none; font-size: .95rem; }
+    .back-link:hover { color: var(--ink); }
+
+    .hero-card, .panel, .card, .callout, .stat-card, details, .video-wrap {
+      background: rgba(255,250,242,.9);
+      border: 1px solid rgba(223,208,189,.92);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card { padding: clamp(28px, 5vw, 58px); overflow: hidden; position: relative; }
+    .hero-card:after {
+      content: "";
+      position: absolute;
+      right: -90px;
+      bottom: -110px;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background: rgba(185,133,43,.12);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      width: fit-content;
+      color: var(--green);
+      font-weight: 900;
+      letter-spacing: .075em;
+      text-transform: uppercase;
+      font-size: .78rem;
+    }
+
+    h1 {
+      margin: 13px 0 16px;
+      font-size: clamp(2rem, 5vw, 3.8rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+      max-width: 850px;
+    }
+
+    .lede {
+      font-size: clamp(1.08rem, 1.9vw, 1.35rem);
+      color: var(--soft-ink);
+      max-width: 760px;
+      margin: 0;
+    }
+
+    main { padding: 14px 0 60px; }
+    section { margin: 34px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 16px;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3.1vw, 2.65rem);
+      line-height: 1;
+      letter-spacing: -.05em;
+    }
+    .section-head p { margin: 0; color: var(--muted); max-width: 630px; }
+
+    .grid { display: grid; gap: 16px; }
+    .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card { padding: 22px; display: flex; flex-direction: column; gap: 12px; }
+    .card h3 { margin: 0; line-height: 1.22; font-size: 1.12rem; letter-spacing: -.015em; }
+    .card p { margin: 0; color: var(--muted); }
+    .card .author { color: var(--soft-ink); font-weight: 700; font-size: .92rem; }
+
+    .badge {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      border-radius: 999px;
+      padding: .3rem .65rem;
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .055em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: rgba(45,122,88,.10);
+      border: 1px solid rgba(45,122,88,.35);
+    }
+    .badge.gold { color: #8a5d14; background: rgba(185,133,43,.14); border-color: rgba(185,133,43,.35); }
+    .badge.blue { color: var(--blue-dark); background: rgba(49,93,143,.11); border-color: rgba(49,93,143,.30); }
+
+    .card-link { font-weight: 850; margin-top: auto; }
+
+    .callout {
+      padding: clamp(23px, 4vw, 38px);
+      border-left: 8px solid var(--green);
+      background: linear-gradient(135deg, rgba(255,250,242,.95), rgba(255,255,255,.9));
+    }
+    .callout h2, .callout h3 { margin-top: 0; }
+    .callout p:last-child { margin-bottom: 0; }
+
+    .video-wrap {
+      padding: 22px;
+      overflow: hidden;
+    }
+    .video-frame {
+      position: relative;
+      width: 100%;
+      padding-top: 56.25%;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #000;
+    }
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: center;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    footer { border-top: 1px solid var(--line); padding: 32px 0 46px; color: var(--muted); font-size: .95rem; }
+
+    @media (max-width: 960px) {
+      .grid.two, .grid.three { grid-template-columns: 1fr; }
+      .section-head { display: block; }
+      .section-head p { margin-top: 9px; }
+      nav { align-items: flex-start; flex-direction: column; }
+      .navlinks { justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <div class="brand">PTSD & Complex PTSD Resources</div>
+      <div class="navlinks">
+        <a href="index.html">← Back to all resources</a>
+        <a href="index.html#treatments">Treatments</a>
+        <a href="index.html#emdr">EMDR best practices</a>
+        <a href="index.html#self">Self-regulation</a>
+        <a href="index.html#videos">Videos</a>
+      </div>
+    </nav>
+
+    <div class="hero-card">
+      <span class="eyebrow">EMDR Guide</span>
+      <h1>EMDR Light Bar for TV — Self-Guided Bilateral Stimulation</h1>
+      <p class="lede">A free, self-guided EMDR bilateral stimulation video designed for TV viewing. Includes setup instructions, three speeds (1x, 1.5x, 2x), and three set durations (15 s, 30 s, 45 s) with diary breaks between sets. Below the video you will also find curated EMDR books, talks by Bessel van der Kolk, and equipment options.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- 1. The EMDR Light Bar video -->
+    <section>
+      <div class="section-head">
+        <h2>The EMDR Light Bar video</h2>
+        <p>Pair with stereo earphones for the strongest bilateral effect. Setup instructions are inside the video.</p>
+      </div>
+
+      <div class="video-wrap">
+        <div class="video-frame">
+          <iframe
+            src="https://www.youtube.com/embed/kY91_9zR3NE"
+            title="EMDR Light Bar for TV — Self-Guided Bilateral Stimulation Sessions"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+        <div class="video-meta">
+          <span>Watch on this page, or</span>
+          <a href="https://youtu.be/kY91_9zR3NE" target="_blank" rel="noopener noreferrer">open the video on YouTube →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Important caveat -->
+    <section>
+      <div class="callout">
+        <h3>A note before you start</h3>
+        <p>Self-guided EMDR is not a substitute for working with a trained EMDR therapist, especially for complex trauma, dissociation, or active mental-health crises. Use this video for self-regulation practice and to become familiar with the bilateral-stimulation rhythm. For trauma processing, find a clinician trained in the full eight-phase EMDR protocol.</p>
+      </div>
+    </section>
+
+    <!-- 2. Best EMDR books -->
+    <section>
+      <div class="section-head">
+        <h2>Best EMDR books</h2>
+        <p>A short reading list — the most widely recommended titles for clients curious about EMDR and the science of trauma.</p>
+      </div>
+
+      <div class="grid three">
+        <article class="card">
+          <span class="badge">Foundational</span>
+          <h3>The Body Keeps the Score</h3>
+          <p class="author">Bessel van der Kolk, MD</p>
+          <p>The most widely read book on trauma and the body. Covers EMDR, yoga, neurofeedback, and how traumatic memory is stored physically — written for a general audience.</p>
+          <a class="card-link" href="https://www.penguinrandomhouse.com/books/313183/the-body-keeps-the-score-by-bessel-van-der-kolk-md/" target="_blank" rel="noopener noreferrer">Find the book →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge">Client guide</span>
+          <h3>Getting Past Your Past</h3>
+          <p class="author">Francine Shapiro, PhD</p>
+          <p>By the founder of EMDR. A practical introduction that explains the therapy and offers self-help techniques drawn from EMDR — accessible to non-clinicians.</p>
+          <a class="card-link" href="https://www.penguinrandomhouse.com/books/216155/getting-past-your-past-by-francine-shapiro-phd/" target="_blank" rel="noopener noreferrer">Find the book →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge">Client guide</span>
+          <h3>Every Memory Deserves Respect</h3>
+          <p class="author">Michael Baldwin & Deborah Korn, PsyD</p>
+          <p>An accessible introduction co-written by a patient and a therapist, illustrated. Useful for someone deciding whether EMDR is right for them.</p>
+          <a class="card-link" href="https://www.workman.com/products/every-memory-deserves-respect/" target="_blank" rel="noopener noreferrer">Find the book →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge gold">Self-help technique</span>
+          <h3>Tapping In</h3>
+          <p class="author">Laurel Parnell, PhD</p>
+          <p>A step-by-step guide to using bilateral stimulation for self-regulation and resource installation — the kind of practice this video supports.</p>
+          <a class="card-link" href="https://www.soundstrue.com/products/tapping-in" target="_blank" rel="noopener noreferrer">Find the book →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge gold">Trauma overview</span>
+          <h3>Waking the Tiger</h3>
+          <p class="author">Peter A. Levine, PhD</p>
+          <p>The foundational text on Somatic Experiencing — a complementary body-based approach. Often read alongside van der Kolk for the somatic angle on trauma.</p>
+          <a class="card-link" href="https://www.northatlanticbooks.com/shop/waking-the-tiger-healing-trauma/" target="_blank" rel="noopener noreferrer">Find the book →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge blue">Clinician reference</span>
+          <h3>EMDR: Basic Principles, Protocols, and Procedures (3rd ed.)</h3>
+          <p class="author">Francine Shapiro, PhD</p>
+          <p>The standard professional textbook of EMDR therapy. Required reading for clinicians; useful for clients who want to understand the full eight-phase protocol in depth.</p>
+          <a class="card-link" href="https://www.guilford.com/books/Eye-Movement-Desensitization-and-Reprocessing-EMDR-Therapy/Francine-Shapiro/9781462532766" target="_blank" rel="noopener noreferrer">Find the book →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. Best videos -->
+    <section>
+      <div class="section-head">
+        <h2>Best videos on EMDR and trauma</h2>
+        <p>Short, high-quality talks and interviews — including Bessel van der Kolk on EMDR and on how trauma is stored in the body.</p>
+      </div>
+
+      <div class="grid three">
+        <article class="card">
+          <span class="badge">Bessel van der Kolk</span>
+          <h3>Effective Trauma Treatment with EMDR</h3>
+          <p>Dr. van der Kolk on why EMDR works for trauma that talk therapy cannot reach — and how he uses it in his own practice. A short, direct clip.</p>
+          <a class="card-link" href="https://www.youtube.com/watch?v=EgCDzYro2I8" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge">Bessel van der Kolk</span>
+          <h3>How Trauma Stays in the Body</h3>
+          <p>A longer Big Think interview with Dr. van der Kolk on how trauma lodges in the body and the therapies — including EMDR — that help release it.</p>
+          <a class="card-link" href="https://www.youtube.com/watch?v=-MI6Z_NlE8A" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge gold">EMDR explainer</span>
+          <h3>Introduction to EMDR Therapy</h3>
+          <p>EMDRIA's official introductory video explaining what EMDR is and how the therapy works — useful as a first watch.</p>
+          <a class="card-link" href="https://www.youtube.com/watch?v=Pkfln-ZtWeY" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge gold">EMDR phases</span>
+          <h3>What is EMDR therapy?</h3>
+          <p>A short EMDRIA video explaining the eight phases of EMDR therapy — the standard protocol any trained clinician will follow.</p>
+          <a class="card-link" href="https://www.youtube.com/watch?v=wQAUzUN0UGY" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge blue">Talk</span>
+          <h3>How Childhood Trauma Affects Health Across a Lifetime</h3>
+          <p>Dr. Nadine Burke Harris on the long-term physical and mental health effects of childhood adversity — important context for anyone considering trauma therapy.</p>
+          <a class="card-link" href="https://www.youtube.com/watch?v=95ovIJ3dsNk" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge blue">Talk</span>
+          <h3>The Secrets of EMDR Therapy and How It Can Help You</h3>
+          <p>The School of Life's calm, accessible animated overview of EMDR — what it is and why it works. Good for sharing with someone new to the idea.</p>
+          <a class="card-link" href="https://www.youtube.com/watch?v=HNdMHuwvF_M" target="_blank" rel="noopener noreferrer">Watch on YouTube →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 4. Tools & equipment -->
+    <section>
+      <div class="section-head">
+        <h2>Tools and equipment</h2>
+        <p>For those who want a dedicated device rather than this TV video. Listed for information, not as a recommendation.</p>
+      </div>
+
+      <div class="grid two">
+        <article class="card">
+          <span class="badge gold">Wireless device</span>
+          <h3>Wireless EMDR Kit — Set</h3>
+          <p>A wireless bilateral-stimulation kit combining a light bar with tactile buzzers held in each hand. Used by clinicians and individuals for at-home practice. This is a commercial product (not a free option); included so you know what's available.</p>
+          <a class="card-link" href="https://www.emdrkit.com/product/wireless-emdr-kit-set/" target="_blank" rel="noopener noreferrer">View on emdrkit.com →</a>
+        </article>
+
+        <article class="card">
+          <span class="badge gold">Free option</span>
+          <h3>This TV video (top of page)</h3>
+          <p>The EMDR Light Bar video above gives you the same visual sweep on any TV plus stereo bell tones in your earphones for tactile-style audio. No purchase required.</p>
+          <a class="card-link" href="https://youtu.be/kY91_9zR3NE" target="_blank" rel="noopener noreferrer">Open the video →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- 5. Back to main resources -->
+    <section>
+      <div class="callout">
+        <h3>Find a trained EMDR therapist</h3>
+        <p>The main resources page links to the VA, WHO, and NICE guidelines, plus a treatment-decision aid that compares evidence-based options. Working with a clinician trained in the full eight-phase protocol gives EMDR its best chance.</p>
+        <p style="margin-top:18px;"><a href="index.html#treatments">← Back to all treatments and resources</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p><strong>Educational note:</strong> This page is for learning and preparation. Diagnosis and treatment planning belong with qualified professionals. In immediate danger, contact local emergency services or a crisis line in your country.</p>
+      <p>Last updated: April 25, 2026.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
